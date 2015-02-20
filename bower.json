@@ -1,8 +1,8 @@
 {
   "name": "notifyCookiesPolicy",
   "version": "0.0.3",
-  "main": ["src/js/notifyCookiesPolicy.js",
-          "src/css/notifyCookiesPolicy.css"],
+  "main": ["dist/js/notifyCookiesPolicy.js",
+          "dist/css/notifyCookiesPolicy.css"],
   "homepage": "https://github.com/MookieFumi/notifyCookiesPolicy",
   "authors": [
     "MookieFumi <mookiefumi@outlook.com>"
@@ -14,7 +14,8 @@
     "bower_components",
     "src",
     "gulpfile.js",
-    "manifiest.json",    
+    "manifiest.json",
+    "package.json",  
     "test",
     "tests"
   ],
