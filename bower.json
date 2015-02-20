@@ -1,6 +1,6 @@
 {
   "name": "notifyCookiesPolicy",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "main": ["dist/js/notifyCookiesPolicy.js",
           "dist/css/notifyCookiesPolicy.css"],
   "homepage": "https://github.com/MookieFumi/notifyCookiesPolicy",
