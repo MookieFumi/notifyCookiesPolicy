@@ -1,7 +1,8 @@
 {
   "name": "notifyCookiesPolicy",
   "version": "0.0.1",
-  "main": "src/notifyCookiesPolicy.js",
+  "main": ["src/js/notifyCookiesPolicy.js",
+          "src/css/notifyCookiesPolicy.css"],
   "homepage": "https://github.com/MookieFumi/notifyCookiesPolicy",
   "authors": [
     "MookieFumi <mookiefumi@outlook.com>"
@@ -15,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.3"
+    "jquery": ">1.9.0",
+    "jquery-cookie": "~1.4.1"
   }
 }
