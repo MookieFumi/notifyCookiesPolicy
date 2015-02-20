@@ -1,6 +1,7 @@
 {
   "name": "notifyCookiesPolicy",
   "version": "0.0.1",
+  main: "src/notifyCookiesPolicy.js",
   "homepage": "https://github.com/MookieFumi/notifyCookiesPolicy",
   "authors": [
     "MookieFumi <mookiefumi@outlook.com>"
