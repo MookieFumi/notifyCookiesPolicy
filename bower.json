@@ -1,0 +1,19 @@
+{
+  "name": "notifyCookiesPolicy",
+  "version": "0.0.1",
+  "homepage": "https://github.com/MookieFumi/notifyCookiesPolicy",
+  "authors": [
+    "MookieFumi <mookiefumi@outlook.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3"
+  }
+}
