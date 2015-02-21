@@ -22,9 +22,9 @@ To use it you just have to include references to previous files.
  - **cssClass**:  "notify-cookies-policy-container"
  - **cookieName**: "notifyCookiesPolicy_accepted"
  - **callbackToEnableGoogleAnalytics**: null
- - **cookiePolicy**.**show**: true 
-   **cookiePolicy**.**defaultText**: "Click here for more info"
-   **cookiePolicy**.**callbackToShowCookiePolicy**: null
+ - **cookiePolicy**.**show**: true
+ - **cookiePolicy**.**defaultText**: "Click here for more info"
+ - **cookiePolicy**.**callbackToShowCookiePolicy**: null
 
 ----------
 
