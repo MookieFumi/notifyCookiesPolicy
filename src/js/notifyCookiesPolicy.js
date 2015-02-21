@@ -67,7 +67,7 @@
         var $cookieAdvise = $('[data-plugin-name=\'' + pluginName + '\']');
         var settings = $cookieAdvise.data(pluginName).settings;
 
-        if ($.cookie(settings.cookieName) === null) {
+        if ($.cookie(settings.cookieName) === undefined) {
             $.cookie(settings.cookieName, settings.cookieName, {
                 expires: 365,
                 path: '/'
