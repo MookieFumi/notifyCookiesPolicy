@@ -1,6 +1,6 @@
 .notify-cookies-policy-container {
     position: fixed;
-    width: 90%;
+    width: 100%;
     left: 0;
     top: 0;
     padding: 0.5em 5%;
@@ -9,7 +9,6 @@
     z-index: 99999;
     text-align: center;
     opacity: 0.9;
-    font-family: 'Open Sans';
     font-size: 13px;
 }
 

@@ -1,23 +1,23 @@
-﻿; (function ($) {
+﻿(function($) {
+    'use strict';
     var pluginName = 'notifyCookiesPolicy';
 
-    $.notifyCookiesPolicy = function (options) {
+    $.notifyCookiesPolicy = function() {
         $.notifyCookiesPolicy.methods.init.apply(this, arguments);
     };
 
     $.notifyCookiesPolicy.methods = {
-        init: function (options) {
+        init: function(options) {
 
-            if ($.cookie == undefined) {
-                throw "Se necesita el plugin $.cookie. https://github.com/carhartl/jquery-cookie";
-                return false;
+            if ($.cookie === undefined) {
+                throw 'You need jquery-cookie plugin https://github.com/carhartl/jquery-cookie';
             }
 
             var defaults = $.notifyCookiesPolicy.defaults;
             var settings = $.extend(true, defaults, options);
             var $cookieAdvise = createCookieAdvise(settings);
 
-            if ($.cookie(defaults.cookieName) == null) {
+            if ($.cookie(defaults.cookieName) === null) {
                 appendCookieAdviseToBody($cookieAdvise);
                 if (settings.cookiePolicy.show) {
                     appendCookiePolicyLink($cookieAdvise, settings);
@@ -30,7 +30,7 @@
     };
 
     function callbackToEnableGoogleAnalytics(callback, $cookieAdvise) {
-        if (typeof callback == 'function') {
+        if (typeof callback === 'function') {
             callback($cookieAdvise);
         }
     }
@@ -40,7 +40,7 @@
     }
 
     function createCookieAdvise(settings) {
-        var $cookieAdvise = $("<div data-plugin-name = '" + pluginName + "'/>");
+        var $cookieAdvise = $('<div data-plugin-name = \'' + pluginName + '\'/>');
         $cookieAdvise.addClass(settings.cssClass).html(settings.defaultText);
         $cookieAdvise.data(pluginName, {
             target: $cookieAdvise,
@@ -51,23 +51,23 @@
     }
 
     function appendCookiePolicyLink($cookieAdvise, settings) {
-        var $cookiePolicyLink = $("<a href='#'/>").text(settings.cookiePolicy.defaultText);
-        $cookiePolicyLink.on("click", function (e) {
+        var $cookiePolicyLink = $('<a href=\'#\'/>').text(settings.cookiePolicy.defaultText);
+        $cookiePolicyLink.on('click', function(e) {
             e.stopPropagation();
 
-            if (typeof settings.cookiePolicy.callbackToShowCookiePolicy == 'function') {
+            if (typeof settings.cookiePolicy.callbackToShowCookiePolicy === 'function') {
                 settings.cookiePolicy.callbackToShowCookiePolicy();
             }
         });
 
-        $cookieAdvise.append("&nbsp;").append($cookiePolicyLink);
+        $cookieAdvise.append('&nbsp;').append($cookiePolicyLink);
     }
 
     function accept() {
-        var $cookieAdvise = $("[data-plugin-name='" + pluginName + "']");
+        var $cookieAdvise = $('[data-plugin-name=\'' + pluginName + '\']');
         var settings = $cookieAdvise.data(pluginName).settings;
 
-        if ($.cookie(settings.cookieName) == null) {
+        if ($.cookie(settings.cookieName) === null) {
             $.cookie(settings.cookieName, settings.cookieName, {
                 expires: 365,
                 path: '/'
@@ -88,16 +88,16 @@
     }
 
     function handlerClickOnDocument() {
-        $(document).click(function (e) {
-            if (e.button != undefined && e.button == 0) {
+        $(document).click(function(e) {
+            if (e.button !== undefined && e.button === 0) {
                 accept();
             }
         });
     }
 
     function handlerScrollOnWindow() {
-        $(window).scroll(function (e) {
-            var $cookieAdvise = $("[data-plugin-name='" + pluginName + "']");
+        $(window).scroll(function() {
+            var $cookieAdvise = $('[data-plugin-name=\'' + pluginName + '\']');
             var settings = $cookieAdvise.data(pluginName).settings;
             if ($(window).scrollTop() >= settings.defaultScroll) {
                 accept();
@@ -111,14 +111,14 @@
     }
 
     $.notifyCookiesPolicy.defaults = {
-        defaultText: 'Utilizamos cookies propias y de terceros para mejorar nuestros servicios. Si contin\xfaa navegando, consideramos que acepta su uso. Para obtener m\xe1s informaci\xf3n, o bien conocer c\xf3mo cambiar la configuraci\xf3n vea la pol\xedtica de cookies.',
+        defaultText: 'We use our own and third-party cookies to improve your experience and our services, by analysing browsing on our website.By continuing to browse, we understand that you accept their use.',
         defaultScroll: 20,
-        cssClass: "notify-cookies-policy-container",
-        cookieName: "notifyCookiesPolicy_accepted",
+        cssClass: 'notify-cookies-policy-container',
+        cookieName: 'notifyCookiesPolicy_accepted',
         callbackToEnableGoogleAnalytics: null,
         cookiePolicy: {
             show: true,
-            defaultText: "Ver Pol\xedtica de cookies",
+            defaultText: 'Click here for more info',
             callbackToShowCookiePolicy: null
         }
     };
