@@ -17,7 +17,7 @@
             var settings = $.extend(true, defaults, options);
             var $cookieAdvise = createCookieAdvise(settings);
 
-            if ($.cookie(defaults.cookieName) === null) {
+            if ($.cookie(defaults.cookieName) === undefined) {
                 appendCookieAdviseToBody($cookieAdvise);
                 if (settings.cookiePolicy.show) {
                     appendCookiePolicyLink($cookieAdvise, settings);
